@@ -100,6 +100,7 @@ public class UserTemplateTest extends AbstractTwitterApiTest {
 		assertFalse(profile.isBackgroundImageTiled());
 		assertEquals("333333", profile.getTextColor());
 		assertEquals("0084B4", profile.getLinkColor());
+		assertEquals("161064614", profile.getIdAsString());
 	}
 	
 	@Test(expected = NotAuthorizedException.class)

@@ -59,6 +59,7 @@ public class TwitterProfile implements Serializable {
 	private String textColor;
 	private String linkColor;
 	private boolean showAllInlineMedia;
+	private String idAsString;
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -336,6 +337,13 @@ public class TwitterProfile implements Serializable {
 	public boolean showAllInlineMedia() {
 		return showAllInlineMedia;
 	}
+	
+	/**
+	 * The user's Twitter ID as a string.
+	 */
+	public String getIdAsString() {
+		return idAsString;
+	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -447,7 +455,10 @@ public class TwitterProfile implements Serializable {
 		if (url != null ? !url.equals(that.url) : that.url != null) {
 			return false;
 		}
-
+		if (idAsString != null ? !idAsString.equals(that.idAsString) : that.idAsString != null) {
+			return false;
+		}
+		
 		return true;
 	}
 
@@ -487,6 +498,7 @@ public class TwitterProfile implements Serializable {
 		result = 31 * result + (textColor != null ? textColor.hashCode() : 0);
 		result = 31 * result + (linkColor != null ? linkColor.hashCode() : 0);
 		result = 31 * result + (showAllInlineMedia ? 1 : 0);
+		result = 31 * result + (idAsString != null ? idAsString.hashCode() : 0);
 		return result;
 	}
 

@@ -113,4 +113,7 @@ abstract class TwitterProfileMixin {
 
 	@JsonProperty("show_all_inline_media")
 	private boolean showAllInlineMedia;
+
+	@JsonProperty("id_str")
+	private String idAsString;
 }
